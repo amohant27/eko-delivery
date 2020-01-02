@@ -1,0 +1,38 @@
+
+.costModule{
+    width: 100%;
+    /* float: left; */
+    padding: 5%;
+    margin-top: 10%;
+    background-color: lightseagreen;
+    border-radius: 15px;
+    padding: 4%;
+}
+    
+.font-label-heading{
+    font-size: 2em;
+    margin-left: 30%;
+    margin-bottom: 3%;
+    text-decoration: underline;
+
+}
+
+.font-label{
+    font-family: 'Roboto';
+    font-size: 22px;
+
+}
+
+.error-dc{
+    margin-left: 34%;
+    font-size: 1em;
+    color: red;
+}
+
+
+.font-label-cost{
+    font-size: 18px;
+    margin-left: 34%;
+    margin-top: 3%;
+
+}

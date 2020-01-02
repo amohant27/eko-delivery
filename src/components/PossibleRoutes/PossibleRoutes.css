@@ -1,0 +1,48 @@
+        .containerCss{
+     border: 1px solid black;
+    background-color: antiquewhite;
+    margin-top: 10%;
+    border-radius: 15px;
+    width: 30%;
+    height: 40%;
+    }
+
+
+.font-label{
+
+font-family: 'Roboto';
+font-size: 22px;
+
+}
+
+.font-label-cheapest{
+font-family: 'Roboto';
+font-size: 15px;
+}
+
+.error-pr{
+    margin-left: 5%;
+    font-size: 1em;
+    color: red;
+}
+
+
+.pathModule{
+    width: 100%;
+    float: left;
+    padding: 5%;
+    margin-top: 10%;
+    background-color: lightseagreen;
+    border-radius: 15px;
+    padding: 4%;
+}
+
+.module{
+        margin-left:25%;
+}
+
+.list-group{
+    margin-left: 10%;
+    width: 30%;
+    margin-top: 2%;
+}
