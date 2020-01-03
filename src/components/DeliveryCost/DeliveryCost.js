@@ -34,7 +34,7 @@ class DeliveryCost extends Component {
     }
 
     calcCost() {
-        
+
         // var routesArr = [];
         var cost = 0;
         let routeGiven = this.pathInput.value;
@@ -54,11 +54,11 @@ class DeliveryCost extends Component {
                 }
                 this.setState({ routeCost: cost });
             }
-        } else if (routeGiven && routeGiven.length === 1){ 
+        } else if (routeGiven && routeGiven.length === 1) {
             this.setState({ routeCost: 0 })
             this.setState({ showError: true })
             this.setState({ errorTxt: 'Route must consists of more than one route code' });
-        }else {
+        } else {
             this.setState({ showError: true })
             this.setState({ routeCost: 0 })
 
@@ -74,7 +74,7 @@ class DeliveryCost extends Component {
                     <Row>
                         <Col xs={3}></Col>
                         <Col xs={1}><FormLabel className="font-label">Route: </FormLabel></Col>
-                        <Col xs={4}><Form.Control size="md" type="text" id="pathId" placeholder="Please enter the route"  ref={(pathInput) => { this.pathInput = pathInput }}></Form.Control>
+                        <Col xs={4}><Form.Control size="md" type="text" id="pathId" placeholder="Please enter the route" ref={(pathInput) => { this.pathInput = pathInput }}></Form.Control>
                         </Col>
                     </Row>
                     {this.state.showError && <label className="error-dc"> {this.state.errorTxt}</label>}
@@ -83,7 +83,7 @@ class DeliveryCost extends Component {
                         <Col xs={5}></Col>
                         <Col xs={5}>
                             <ButtonToolbar>
-                                <Button  id="calCost" variant="secondary" size="md" active onClick={this.calcCost.bind(this)}>
+                                <Button id="calCost" variant="secondary" size="md" active onClick={this.calcCost.bind(this)}>
                                     Calculate Cost
                                 </Button>
                             </ButtonToolbar>
@@ -98,15 +98,3 @@ class DeliveryCost extends Component {
 }
 
 export default DeliveryCost;
-
-
-// <label> Route : </label>
-//     <input type="text" ref={(pathInput) => { this.pathInput = pathInput }} />
-//     <div>
-//         <button type="button" className="btn btn-primary" onClick={this.calcCost.bind(this)}>Calculate Cost</button>
-//     </div>
-//                 {
-//     this.state.routesArr.length > 0 && (<div>
-//         <label> Route  Cost: {this.state.routeCost} </label>
-//     </div>)
-// }

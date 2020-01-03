@@ -37,18 +37,18 @@ class PossibleRoutes extends Component {
 
         //if src and destination is empty 
         // if the src and destination match the regex
-        if (srcInput.length === 0 || destInput.length === 0) {
+        if (srcInput === '' || destInput === '') {
             this.setState({ showError: true })
             this.setState({ onlyPossibleRoutesArr: [] })
             this.setState({ errorTxt: 'Please provide the source/destination' })
-        }else if (!resultSource || !resultDest){
+        } else if (!resultSource || !resultDest) {
             this.setState({ showError: true });
             this.setState({ onlyPossibleRoutesArr: [] })
             this.setState({ errorTxt: 'Incorrect Value, Please enter correct Route Code' })
-        }else {
+        } else {
             // find all possible paths
-            var routes = getPossiblePaths(srcInput,destInput, parsedInput);
-            if(routes !== ''){
+            var routes = getPossiblePaths(srcInput, destInput, parsedInput);
+            if (routes !== '') {
                 const routesArr = routes.split(';');
                 const onlyPossibleRoutesArr = [];
                 const onlyRoutesWithMaxFourST = [];
@@ -70,13 +70,13 @@ class PossibleRoutes extends Component {
                     return routePerNode;
                 });
                 this.getCheapestRoute(routesArr);
-            }else {
+            } else {
                 this.setState({ onlyPossibleRoutesArr: [] })
                 this.setState({ errorTxt: 'No Such Route' })
                 this.setState({ showError: true });
-               
+
             }
-        }    
+        }
     }
 
 
@@ -140,7 +140,7 @@ class PossibleRoutes extends Component {
         return (
             <div className="pathModule">
                 <Container className="module" >
-                <br/>
+                    <br />
                     <Row>
                         <Col xs={2}><FormLabel className="font-label">Source : </FormLabel></Col>
                         <Col xs={3}><Form.Control size="md" type="text" placeholder="source" ref={(srcInput) => this.srcInput = srcInput}  ></Form.Control>
@@ -168,24 +168,24 @@ class PossibleRoutes extends Component {
                         <Col xs={4}>
                             <ButtonToolbar>
                                 <Button variant="secondary" size="md" active onClick={this.getPossibleNodes.bind(this, 4)}>
-                                     Routes with Max 4 stops
+                                    Routes with Max 4 stops
                                 </Button>
                             </ButtonToolbar>
                         </Col>
 
                     </Row>
-                    
+
                     {this.state.onlyPossibleRoutesArr.length > 0 && <div className="list-group font-label">
                         <div>We found <strong>{this.state.onlyPossibleRoutesArr.length}</strong> Routes for you.</div>
-                        <br/>
+                        <br />
                         <div>{routesFormed}</div>
-                        <br/>
+                        <br />
                         <Row>
                             <Col xs={1}></Col>
                             <Col xs={10}>
                                 <ButtonToolbar>
                                     <Button variant="secondary" size="md" active onClick={this.showCheapestRoutes}>
-                                       Find the Cheapest Route
+                                        Find the Cheapest Route
                                 </Button>
                                 </ButtonToolbar>
                             </Col>
